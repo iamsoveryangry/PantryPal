@@ -1,38 +1,49 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Testing Tesseract</title>
-  <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
-  <!-- <script src='https://unpkg.com/tesseract.js@v2.0.0-alpha.4/dist/tesseract.min.js'></script> -->
-  <!-- Using a free CDN -->
+  <title>Pantry Pal</title>
+  <link rel="stylesheet" type="text/css" href="camera.css">
   <script src='https://cdn.rawgit.com/naptha/tesseract.js/1.0.10/dist/tesseract.js'></script>
+  <script src="https://kit.fontawesome.com/9f8a8898a1.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
 </head>
-<body>
-  <h1>Tesseract Testing</h1>
 
-    <div class="container">
+<body>
+    <div class="dropdown">
+    <span>Menu</span>
+    <div class="dropdown-content">
+    <p><a href = "camera.html">Camera</a></p>
+    <p><a href = "calendar_v.html">Calendar</a></p>
+    <p><a href = "index.html">Sign Out</a></p>
+      </div>
+  </div>
+ 
+ <p align = center><img id= "logo" src="images/logo.svg" style="width:40vw; height:40vw;"></p>
+
+    <div class="container" align = "center">
       <div class="row">
         <div class="col-sm-12">
 
-<div class="video-options">
-    <select name="" id="" class="custom-select">
-        <option value="">Select camera</option>
-    </select>
-</div>
+          <div class="video-options">
+          <select name="" id="" class="custom-select">
+          <option value="">Select camera</option>
+          </select>
+          </div>
+
 
         	<video id="video" width="640" height="480" autoplay></video>
-            <button id="snap">Take a photo!</button>
+            <button id="snap" class="btn-1"><i class="fas fa-camera-retro fa-2x"></i></button>
             <canvas id="canvas" width="640" height="480"></canvas>
 
 <!-- ////////Download button,from https://jsfiddle.net/wboykinm/fL0q2uce/////////  -->
-    <a id="download">Download Image</a>
+    <button id="download" class="btn-2"><i class="fas fa-arrow-alt-circle-down fa-2x"></i></button>
 
 <!-- Start of file upload, click here -->
 <input type="file" style="position:absolute; top: -100px" id="picker" onchange="picked_file(this.files[0])">
                 
     <canvas id='c' class="" width="400" height="300"></canvas>
     <div class="output nose" style="padding: 25px; cursor: pointer" onclick="open_picker()"> 
-        Drag and drop an image here or click this box to upload an image. 
+        <button id="upload" class="btn-3"><i class="fas fa-arrow-alt-circle-up fa-2x"></i></button>
 <!-- End of file upload, click here -->
 
 <div class="output">
@@ -117,7 +128,6 @@
 ////////Beginning of camera script, gotten from https://davidwalsh.name/browser-camera//////// 
 var video = document.getElementById('video');
 
-
 //var image = document.querySelector('img.photo');
 
 //Camera
@@ -127,8 +137,6 @@ if(navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
         video.play();
     });
 }
-
-const cameraOptions = document.querySelector('.video-options>select');
 
 //Canvas stuff
 var canvas = document.getElementById('canvas'), ctx = canvas.getContext('2d');

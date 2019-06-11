@@ -3,32 +3,10 @@ body {
         font-family: 'Ubuntu', sans-serif;
     }
 
-#exit {
-    position: relative;
-    width:50px;
-    height:50px;
-    left:0;
-    right:0;
-    margin-left: 70%;
-    margin-right: auto;
-
-    
-}
-
-.title2 {
-        padding-top: 0.5em;
-        padding-bottom: 0.5em;
-        color: #AEC86B;
-        font-family: 'Ubuntu', sans-serif;
-        font-weight: bold;
-        font-size: 35px;
-        margin: auto;
-    }
-
 #calendar{
   margin-left: auto;
   margin-right: auto;
-  width: 400px;
+  width: 320px;
   font-family: 'Ubuntu', sans-serif;
 }
 #calendar_weekdays div{
@@ -37,7 +15,7 @@ body {
 }
 #calendar_content, #calendar_weekdays, #calendar_header{
   position: relative;
-  width: 320px;
+  width: 300px;
   overflow: hidden;
   float: left;
   z-index: 10;
@@ -62,7 +40,7 @@ body {
   background-color: #AEC86B;
 }
 #calendar_content div.blank{
-  background-color: #E8E8E8;
+  background-color: #FFFFFF;
 }
 #calendar_header, #calendar_content div.today{
   zoom: 1;
